@@ -20,7 +20,6 @@ You can access the live version of the app here:
 - [Getting Started](#getting-started)
 - [Issues Faced](#issues-faced)
 - [Future Endeavours](#future-endeavours)
-- [License](#license)
 
 ---
 
@@ -33,7 +32,7 @@ This weather app is a lightweight, front-end-only web application built with van
 ## Features
 
 - Search weather by city name
-- Displays current temperature (Celsius / Fahrenheit toggle)
+- Displays current temperature 
 - Displays humidity percentage
 - Shows weather condition (e.g., Clear, Cloudy, Rainy, Stormy)
 - Clean and minimal user interface
@@ -78,19 +77,15 @@ Since this is a purely front-end application with no back-end, the API key is vi
 
 When a user types a city name that does not exist or is misspelled, the API returns an error status code. Without proper error handling, the app would crash or display stale data. Robust conditional checks on the API response status were added to display a user-friendly message in such cases.
 
-### 3. Unit Conversion
-
-Toggling between Celsius and Fahrenheit without making a new API call required storing the raw Kelvin or Celsius value and performing the conversion locally in JavaScript. Getting the rounding and formula correct without introducing floating-point display issues took some iteration.
-
-### 4. Inconsistent API Response Structure
+### 3. Inconsistent API Response Structure
 
 Different weather conditions return slightly different JSON structures from the API (for example, some responses include multiple weather objects in an array while others include only one). Defensive coding was necessary to safely access nested properties and avoid undefined errors.
 
-### 5. Network Latency and User Experience
+### 4. Network Latency and User Experience
 
 On slower connections, there is a noticeable delay between submitting the search and seeing results. Without a loading indicator, the interface appeared frozen. A simple loading state was added to give the user feedback that a request was in progress.
 
-### 6. Mobile Keyboard Behavior
+### 5. Mobile Keyboard Behavior
 
 On mobile browsers, the virtual keyboard would sometimes remain open after the search was submitted, obscuring the results. Programmatically blurring the input field after submission resolved this.
 
