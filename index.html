@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: "0", transform: "scale(0.95)" },
+              "100%": { opacity: "1", transform: "scale(1)" }
+            },
+            slideDown: {
+              "0%": { opacity: "0", transform: "translateY(-20px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" }
+            }
+          },
+          animation: {
+            fadeIn: "fadeIn 0.6s ease-out",
+            slideDown: "slideDown 0.6s ease-out"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-[#121212] text-white flex justify-center items-center h-screen font-sans">
+
+  <div class="bg-[#1E1E1E] p-5 rounded-xl w-[400px] shadow-lg text-center 
+              transition duration-500 hover:scale-105 animate-fadeIn">
+
+    <h1 class="text-2xl mb-5 font-bold animate-slideDown">Weather App</h1>
+
+    <div class="flex justify-between mb-5">
+      <input type="text" id="city-input" placeholder="Enter city name" class="w-[70%] p-2 bg-[#333] rounded-md text-white outline-none 
+               focus:ring-2 focus:ring-purple-500 transition duration-300" />
+
+      <button id="get-weather-btn" class="w-[25%] bg-purple-600 rounded-md text-white 
+               hover:bg-purple-800 active:scale-95 
+               transition duration-300">
+        Get
+      </button>
+    </div>
+
+    <div id="weather-info" class="hidden mt-5 opacity-0 transition-all duration-700">
+      <h2 id="city-name" class="text-xl font-semibold"></h2>
+      <p id="temperature"></p>
+      <p id="description"></p>
+      <p id="humidity"></p>
+    </div>
+
+    <p id="error-message" class="hidden text-orange-500 mt-5 animate-pulse">
+      City not found. Please try again.
+    </p>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
