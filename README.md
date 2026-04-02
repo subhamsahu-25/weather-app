@@ -25,7 +25,7 @@ You can access the live version of the app here:
 
 ## About
 
-This weather app is a lightweight, front-end-only web application built with vanilla HTML, CSS, and JavaScript. It allows users to search for any city and instantly view current weather conditions including temperature, humidity, and an overall weather description. No frameworks or back-end servers are required to run this project.
+This weather app is a lightweight, front-end-only web application built with vanilla HTML, Tailwind-CSS, and JavaScript. It allows users to search for any city and instantly view current weather conditions including temperature, humidity, and an overall weather description. No frameworks or back-end servers are required to run this project.
 
 ---
 
